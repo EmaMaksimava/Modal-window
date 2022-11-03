@@ -7,3 +7,10 @@
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
 }
+
+.container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
