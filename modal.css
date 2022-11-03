@@ -6,6 +6,28 @@
   z-index: 10;
 }
 
+.vmodal.hide .modal-window,
+.vmodal.hide .modal-overlay {
+  opacity: 1;
+  z-index: 10;
+}
+
+.vmodal.open .modal-window {
+  transform: translateY(50%);
+}
+
+.vmodal.open .modal-overlay {
+  background: rgba(0, 0, 0, 0.511);
+}
+
+.vmodal.hide .modal-window {
+  transform: translateY(-310px);
+}
+
+.vmodal.hide .modal-overlay {
+  background: rgba(0, 0, 0, 0);
+}
+
 .modal-window, .modal-overlay {
   opacity: 0;
   z-index: -1;
@@ -17,9 +39,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
+  transition: background .4 ease-in;
 }
 
 .modal-window {
@@ -28,11 +51,13 @@
   border-radius: 8px;
   background-color: aliceblue;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.511);
-  align-self: center;
+  margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  transform: translateY(-310px);
+  transition: transform .4s ease-in;
 }
 
 .modal-title {
