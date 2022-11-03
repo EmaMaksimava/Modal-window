@@ -4,4 +4,82 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-window {
+  width: 650px;
+  height: 300px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.511);
+  align-self: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.modal-title {
+  margin: 10px;
+
+}
+
+.modal-header {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: rgb(46, 45, 45);
+  font-size: 2rem;
+}
+
+.modal-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.modal-btn i {
+  font-size: 2.5rem;
+  color: rgb(46, 45, 45);
+  cursor: pointer;
+  transition: .3s all;
+}
+
+.modal-btn i:hover {
+  color: rgb(255, 77, 0);
+}
+
+.modal-content {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.modal-footer {
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-btn {
+  width: 175px;
+  height: 50px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all .3s;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.footer-btn:hover{
+  background-color: rgb(161, 159, 159);
+}
+
+.btn-ok {
+  background-color: rgb(44, 193, 158);
+}
+
+.btn-cancel {
+  background-color: rgb(221, 74, 40);
 }
