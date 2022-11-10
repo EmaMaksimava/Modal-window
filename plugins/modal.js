@@ -29,9 +29,13 @@ $.modal = function(options) {
   const ANIMATION_SPEED = 400;
   const $modal = _createModal(options);
   let closing = false;
+  let destroyed = false;
 
   const modalMethods = {
     open() {
+      if (destroyed) {
+        return console.log('Modal is destroyed');
+      }
       !closing && $modal.classList.add('open');
     },
     close() {
@@ -42,15 +46,22 @@ $.modal = function(options) {
         $modal.classList.remove('hide');
         closing = false;
       }, ANIMATION_SPEED)
-    },
-    destroy() {}
+    }
   }
 
-  $modal.addEventListener('click', event => {
+  const listenerClose = event => {
     if(event.target.dataset.close) {
       modalMethods.close()
     }
-  })
+  }
 
-  return modalMethods;
+  $modal.addEventListener('click', listenerClose)
+
+  return Object.assign(modalMethods, {
+    destroy() {
+      $modal.parentNode.removeChild($modal);
+      $modal.removeEventListener('click', listenerClose);
+      destroyed = true;
+    }
+  })
 }
