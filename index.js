@@ -12,7 +12,8 @@ const myModal = $.modal( {
       class: 'footer-btn',
       specialClass: 'btn-ok',
       handler() {
-        console.log('Click on OK')
+        console.log('Click on OK');
+        myModal.close()
       }
     },
     {
@@ -20,7 +21,8 @@ const myModal = $.modal( {
       class: 'footer-btn',
       specialClass: 'btn-cancel',
       handler() {
-        console.log('Click on Cancel')
+        console.log('Click on Cancel');
+        myModal.close()
       }
     }
   ]
