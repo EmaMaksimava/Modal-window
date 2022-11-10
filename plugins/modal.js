@@ -3,10 +3,10 @@ function _createModal(options) {
   const modal = document.createElement('div');
   modal.classList.add('vmodal');
   modal.insertAdjacentHTML('afterbegin', `
-    <div class="modal-overlay">
+    <div class="modal-overlay" data-close="true">
       <div class="modal-window" style="width: ${options.width || DEFAULT_WIDTH}">
         <div class="modal-btn">
-          ${options.closable ? `<i class="fa-regular fa-rectangle-xmark"></i>` : ''}
+          ${options.closable ? `<i class="fa-regular fa-rectangle-xmark" data-close="true"></i>` : ''}
         </div>
         <div class="modal-title">
           <h2 class="modal-header">${options.title || 'Modal window'}</h2>
@@ -30,7 +30,7 @@ $.modal = function(options) {
   const $modal = _createModal(options);
   let closing = false;
 
-  return {
+  const modalMethods = {
     open() {
       !closing && $modal.classList.add('open');
     },
@@ -45,4 +45,12 @@ $.modal = function(options) {
     },
     destroy() {}
   }
+
+  $modal.addEventListener('click', event => {
+    if(event.target.dataset.close) {
+      modalMethods.close()
+    }
+  })
+
+  return modalMethods;
 }
