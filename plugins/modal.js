@@ -11,7 +11,7 @@ function _createModal(options) {
         <div class="modal-title">
           <h2 class="modal-header">${options.title || 'Modal window'}</h2>
         </div>
-        <div class="modal-content">
+        <div class="modal-content" data-content>
           ${options.content || ''}
         </div>
         <div class="modal-footer">
@@ -62,6 +62,9 @@ $.modal = function(options) {
       $modal.parentNode.removeChild($modal);
       $modal.removeEventListener('click', listenerClose);
       destroyed = true;
+    },
+    setContent(html) {
+      $modal.querySelector('[data-content]').innerHTML = html;
     }
   })
 }
