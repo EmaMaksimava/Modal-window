@@ -5,5 +5,23 @@ const myModal = $.modal( {
   <h3> Your modal window is so cool!</h3>
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam officiis nobis quibusdam.</p>
   `,
-  width: '400px'
+  width: '400px',
+  footerButtons : [
+    {
+      text: 'OK',
+      class: 'footer-btn',
+      specialClass: 'btn-ok',
+      handler() {
+        console.log('Click on OK')
+      }
+    },
+    {
+      text: 'Cancel',
+      class: 'footer-btn',
+      specialClass: 'btn-cancel',
+      handler() {
+        console.log('Click on Cancel')
+      }
+    }
+  ]
 });

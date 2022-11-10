@@ -1,3 +1,30 @@
+Element.prototype.appendAfter = function(element) {
+  element.parentNode.insertBefore(this, element.nextSibling)
+}
+
+function noop() {};
+
+function _createModalBtns(buttons = []) {
+  if(buttons.lenght === 0) {
+    return document.createElement('div');
+  }
+
+  const footer = document.createElement('div');
+  footer.classList.add('modal-footer');
+
+  buttons.forEach( btn => {
+    const $btn = document.createElement('button');
+    $btn.innerText = btn.text;
+    $btn.classList.add(`${btn.class}`);
+    $btn.classList.add(`${btn.specialClass || 'secondary'}`);
+    $btn.onclick = btn.handler || noop
+
+    footer.appendChild($btn);
+  })
+
+  return footer
+}
+
 function _createModal(options) {
   const DEFAULT_WIDTH = '600px';
   const modal = document.createElement('div');
@@ -14,13 +41,12 @@ function _createModal(options) {
         <div class="modal-content" data-content>
           ${options.content || ''}
         </div>
-        <div class="modal-footer">
-          <button class="btn-ok footer-btn">OK</button>
-          <button class="btn-cancel footer-btn"> Cancel</button>
-        </div>
       </div>
     </div>
   `)
+
+  const footerBtns = _createModalBtns(options.footerButtons);
+  footerBtns.appendAfter(modal.querySelector('[data-content]'))
   document.body.appendChild(modal);
   return modal;
 }
