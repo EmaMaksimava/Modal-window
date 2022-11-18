@@ -19,7 +19,7 @@
 .cards-wrapper {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-
+  gap: 2rem;
 }
