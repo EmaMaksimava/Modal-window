@@ -29,4 +29,4 @@ const myModal = $.modal( {
 });
 
 
-const listOfCards = renderList(options);
+const listOfCards = renderList(dataOfProducts);

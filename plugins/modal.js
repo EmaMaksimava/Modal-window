@@ -2,6 +2,8 @@ Element.prototype.appendAfter = function(element) {
   element.parentNode.insertBefore(this, element.nextSibling)
 }
 
+const $ = {}
+
 function noop() {};
 
 function _createModalBtns(buttons = []) {
