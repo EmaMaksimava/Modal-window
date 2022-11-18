@@ -1,5 +1,6 @@
 const dataOfProducts = [
   {
+    id: 1,
     name: 'Orange',
     price: '6.99',
     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sequi fuga nostrum!',
@@ -7,6 +8,7 @@ const dataOfProducts = [
     country: 'Spain'
   },
   {
+    id: 2,
     name: 'Lime',
     price: '11.49',
     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sequi fuga nostrum!',
@@ -14,6 +16,7 @@ const dataOfProducts = [
     country: 'Egypt'
   },
   {
+    id: 3,
     name: 'Lichi',
     price: '18.99',
     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sequi fuga nostrum!',
@@ -21,6 +24,7 @@ const dataOfProducts = [
     country: 'China'
   },
   {
+    id: 4,
     name: 'Mango',
     price: '8.99',
     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sequi fuga nostrum!',
@@ -28,6 +32,7 @@ const dataOfProducts = [
     country: 'Egypt'
   },
   {
+    id: 5,
     name: 'Pitaya',
     price: '19.99',
     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sequi fuga nostrum!',
@@ -35,10 +40,19 @@ const dataOfProducts = [
     country: 'Tailand'
   },
   {
+    id: 6,
     name: 'Peach',
     price: '6.99',
     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sequi fuga nostrum!',
     image: 'https://img.freepik.com/premium-photo/fresh-peach-fruits-and-half_299651-1751.jpg',
     country: 'Spain'
+  },
+  {
+    id: 7,
+    name: 'Banana',
+    price: '6.99',
+    info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sequi fuga nostrum!',
+    image: 'https://obshe.net/upload/000/u11/a8/f7/4668cb5d.jpg',
+    country: 'Urugvai'
   },
 ]
