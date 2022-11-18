@@ -27,3 +27,6 @@ const myModal = $.modal( {
     }
   ]
 });
+
+
+const listOfCards = renderList(options);
