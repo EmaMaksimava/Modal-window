@@ -11,7 +11,7 @@ function _createCard(options) {
       <p class="card-text">${options.info}</p>
       <h6 class="card-title">${options.country}</h6>
       <button class="btn btn-primary" data-btn="price" data-id="${options.id}">Watch price</button>
-      <button class="btn btn-danger" data-del="delete">Delete</button>
+      <button class="btn btn-danger" data-del="delete" data-id="${options.id}">Delete</button>
     </div>
   `)
   cardsWrap.appendChild(card);
