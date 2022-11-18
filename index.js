@@ -1,3 +1,5 @@
+let itemToDelete = null;
+
 const myModal = $.modal( {
   title: 'Price of product',
   closable: true,
@@ -31,8 +33,11 @@ const confirm = $.modal( {
       specialClass: 'btn-ok',
       handler() {
         console.log('click delete');
-
-        confirm.destroy()
+        if (itemToDelete) {
+          itemToDelete.cardElement.remove();
+        }
+        itemToDelete = null;
+        confirm.close()
       }
     },
     {
@@ -41,6 +46,7 @@ const confirm = $.modal( {
       specialClass: 'btn-cancel',
       handler() {
         console.log('cleck cancel');
+        itemToDelete = null;
         confirm.close();
       }
     }
@@ -52,10 +58,10 @@ const listOfCards = renderList(dataOfProducts);
 
 document.addEventListener('click', event => {
   const id = +event.target.dataset.id;
-
+  const product = listOfCards.find(item => item.id === id);
 
   if(event.target.dataset.btn === 'price') {
-    const product = dataOfProducts.find(item => item.id === id)
+
     myModal.setContent(`
     <h3 class="product-title">${product.name}</h3>
     <h4 class="product-country"> Country: ${product.country}</h4>
@@ -65,6 +71,7 @@ document.addEventListener('click', event => {
   }
 
   if(event.target.dataset.del === 'delete') {
+    itemToDelete = product;
     confirm.open();
   }
 })

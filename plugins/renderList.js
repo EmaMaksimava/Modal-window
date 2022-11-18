@@ -19,9 +19,11 @@ function _createCard(options) {
 }
 
 const renderList = function(list) {
-  const arrList = list;
-  arrList.forEach(item => {
-    _createCard(item);
+  return list.map(item => {
+    const cardElement = _createCard(item);
+    Object.assign(item, {
+      cardElement
+    })
     return item;
   })
 
